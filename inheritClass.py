@@ -9,3 +9,8 @@ class Doggo:
     
     def speak(self, sound):
         return f"{self.name} says {sound}"
+    
+    miles = Doggo("Miles", 4)
+    buddy = Doggo("Buddy", 9)
+    jack = Doggo("Jack", 3)
+    jim = Doggo("Jim", 5)
