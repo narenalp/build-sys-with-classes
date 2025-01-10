@@ -36,5 +36,5 @@ class JackRusselTerrier(Doggo):
         return f"{self.name} says {sound}"
     
 miles = JackRusselTerrier("Miles", 4)
-miles.speak()
+print(miles.speak())
 miles.speak("Grr")
