@@ -1,3 +1,5 @@
+class WrongNumberOfPoints(Exception):
+    pass
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -5,18 +7,19 @@ class Point:
 
 class Shape:
     def __init__(self, points):
+        for point in points:
+            if not isinstance(point, Point):
+                raise TypeError("All Member Should be members of Point class")
         self.points = points
 
-triangle = Shape([
-    Point(0,0),
-    Point(5,5),
-    Point(2,4)
-])
+class Square(Shape):
+    def __init__(self, points):
+        if(len(points)!=4):
+            raise WrongNumberOfPoints
+        super().__init__(points)
 
-topLeft = Point(0,0)
-topRight = Point(0,10)
-bottomLeft = Point(10,0)
-bottomRight = Point(10,10)
-
-square = Shape([topLeft,topRight,bottomLeft,bottomRight])
-
+class Triangle(Shape):
+    def __init__(self, points):
+        if(len(points)!=3):
+            raise WrongNumberOfPoints
+        super().__init__(points)
