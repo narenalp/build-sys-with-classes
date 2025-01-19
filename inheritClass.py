@@ -29,3 +29,12 @@ gandhi.speak("buf")
 print(isinstance(gandhi, Labrador))
 
 print(isinstance(gandhi, Doggo))
+
+# Extending a Parent CLass
+class JackRusselTerrier(Doggo):
+    def speak(self, sound="Arf"):
+        return f"{self.name} says {sound}"
+    
+miles = JackRusselTerrier("Miles", 4)
+print(miles.speak())
+miles.speak("Grr")
